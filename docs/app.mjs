@@ -11,6 +11,7 @@ const apiKey = myURL.searchParams.get("api_key");
 async function test(url, blob) {
   return await fetch(url, {
     method: "POST",
+    body: blob,
   });
 }
 const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + apiKey;
