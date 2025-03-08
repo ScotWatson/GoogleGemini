@@ -24,5 +24,5 @@ const data = {
 };
 const blob = new Blob([ JSON.stringify(data) ], { type: "application/json" });
 test(url, blob).then(async (response) => {
-  console.log(await response.JSON());
+  console.log(await response.json());
 });
