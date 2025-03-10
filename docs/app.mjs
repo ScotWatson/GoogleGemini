@@ -65,7 +65,7 @@ btnTestFile.addEventListener("click", (evt) => {
 });
 
 async function cachedContents_create(contents, tools, expiration, name, displayName, model, systemInstruction, toolConfig) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/cachedContents/" + name + "?" + queryParams.toString());
   const data = {
@@ -84,7 +84,7 @@ async function cachedContents_create(contents, tools, expiration, name, displayN
   });
 }
 async function cachedContents_list() {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/cachedContents" + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -92,7 +92,7 @@ async function cachedContents_list() {
   });
 }
 async function cachedContents_get() {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/cachedContents/" + name + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -100,7 +100,7 @@ async function cachedContents_get() {
   });
 }
 async function cachedContents_patch(fields, expiration, name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   for (const field of fields) {
     queryParams.add("updateMask", field);
@@ -117,7 +117,7 @@ async function cachedContents_patch(fields, expiration, name) {
   });
 }
 async function cachedContents_delete(name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/cachedContents/" + name + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -125,7 +125,7 @@ async function cachedContents_delete(name) {
   });
 }
 async function corpera_create(name, displayName) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera" + "?" + queryParams.toString());
   const data = {
@@ -138,7 +138,7 @@ async function corpera_create(name, displayName) {
   });
 }
 async function corpera_query(name, query, metadataFilters, resultsCount) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + name + ":query" + "?" + queryParams.toString());
   const data = {
@@ -153,7 +153,7 @@ async function corpera_query(name, query, metadataFilters, resultsCount) {
   });
 }
 async function corpera_get() {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + name + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -161,7 +161,7 @@ async function corpera_get() {
   });
 }
 async function corpera_list(pageSize, pageToken) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("pageSize", pageSize);
   queryParams.set("pageToken", pageToken);
@@ -171,7 +171,7 @@ async function corpera_list(pageSize, pageToken) {
   });
 }
 async function corpera_patch(fields, expiration, name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   for (const field of fields) {
     queryParams.add("updateMask", field);
@@ -187,7 +187,7 @@ async function corpera_patch(fields, expiration, name) {
   });
 }
 async function corpera_delete(force) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("force", force);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera" + "?" + queryParams.toString());
@@ -196,7 +196,7 @@ async function corpera_delete(force) {
   });
 }
 async function corpera_documents_create(parent) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/documents" + "?" + queryParams.toString());
   const data = {
@@ -210,7 +210,7 @@ async function corpera_documents_create(parent) {
   });
 }
 async function corpera_documents_query(corpera, document, query, resultsCount, metadataFilters) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + corpera + "/documents/" + document + ":query" + "?" + queryParams.toString());
   const data = {
@@ -225,7 +225,7 @@ async function corpera_documents_query(corpera, document, query, resultsCount, m
   });
 }
 async function corpera_documents_get(corpera, document) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + corpera + "/documents/" + document + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -233,7 +233,7 @@ async function corpera_documents_get(corpera, document) {
   });
 }
 async function corpera_documents_list(corpera, pageSize, pageToken) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("pageSize", pageSize);
   queryParams.set("pageToken", pageToken);
@@ -243,7 +243,7 @@ async function corpera_documents_list(corpera, pageSize, pageToken) {
   });
 }
 async function corpera_documents_patch(corpera, document, fields, displayName, customMetadata) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   for (const field of fields) {
     queryParams.add("updateMask", field);
@@ -260,7 +260,7 @@ async function corpera_documents_patch(corpera, document, fields, displayName, c
   });
 }
 async function corpera_documents_delete(corpera, document, force) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("force", force);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + corpera + "/documents/" + document + "?" + queryParams.toString());
@@ -269,7 +269,7 @@ async function corpera_documents_delete(corpera, document, force) {
   });
 }
 async function corpera_documents_chunks_create(parent, document, name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/documents" + document + "/chunks" + "?" + queryParams.toString());
   const data = {
@@ -283,7 +283,7 @@ async function corpera_documents_chunks_create(parent, document, name) {
   });
 }
 async function corpera_documents_chunks_get(parent, document, chunk) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/documents/" + document + "/chunks/" + chunk + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -291,7 +291,7 @@ async function corpera_documents_chunks_get(parent, document, chunk) {
   });
 }
 async function corpera_documents_chunks_list(parent, document, pageSize, pageToken) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("pageSize", pageSize);
   queryParams.set("pageToken", pageToken);
@@ -301,7 +301,7 @@ async function corpera_documents_chunks_list(parent, document, pageSize, pageTok
   });
 }
 async function corpera_documents_chunks_patch(corpera, document, chunk, fields, data, customMetadata) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   for (const field of fields) {
     queryParams.add("updateMask", field);
@@ -318,7 +318,7 @@ async function corpera_documents_chunks_patch(corpera, document, chunk, fields, 
   });
 }
 async function corpera_documents_chunks_delete(parent, document, chunk) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/documents/" + document + "/chunks/" + chunk + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -326,7 +326,7 @@ async function corpera_documents_chunks_delete(parent, document, chunk) {
   });
 }
 async function corpera_documents_chunks_batchCreate(parent, document, requests) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/documents" + document + "/chunks:batchCreate" + "?" + queryParams.toString());
   const data = {
@@ -338,7 +338,7 @@ async function corpera_documents_chunks_batchCreate(parent, document, requests) 
   });
 }
 async function corpera_documents_chunks_batchUpdate(parent, document, requests) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/documents" + document + "/chunks:batchUpdate" + "?" + queryParams.toString());
   const data = {
@@ -350,7 +350,7 @@ async function corpera_documents_chunks_batchUpdate(parent, document, requests) 
   });
 }
 async function corpera_documents_chunks_batchDelete(parent, document, requests) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/documents" + document + "/chunks:batchDelete" + "?" + queryParams.toString());
   const data = {
@@ -362,7 +362,7 @@ async function corpera_documents_chunks_batchDelete(parent, document, requests) 
   });
 }
 async function corpera_permissions_create(parent) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + parent + "/permissions" + "?" + queryParams.toString());
   const data = {
@@ -377,7 +377,7 @@ async function corpera_permissions_create(parent) {
   });
 }
 async function corpera_permissions_list() {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("pageSize", pageSize);
   queryParams.set("pageToken", pageToken);
@@ -387,7 +387,7 @@ async function corpera_permissions_list() {
   });
 }
 async function corpera_permissions_get(corpera, permission) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + corpera + "/permissions/" + permission + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -395,7 +395,7 @@ async function corpera_permissions_get(corpera, permission) {
   });
 }
 async function corpera_permissions_patch(corpera, permission, role) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   for (const field of fields) {
     queryParams.add("updateMask", field);
@@ -411,7 +411,7 @@ async function corpera_permissions_patch(corpera, permission, role) {
   });
 }
 async function corpera_permissions_delete(corpera, permission) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + corpera + "/permissions/" + permission + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -419,7 +419,7 @@ async function corpera_permissions_delete(corpera, permission) {
   });
 }
 async function files_get(name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/files/" + name + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -427,7 +427,7 @@ async function files_get(name) {
   });
 }
 async function files_list(name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("pageSize", pageSize);
   queryParams.set("pageToken", pageToken);
@@ -437,7 +437,7 @@ async function files_list(name) {
   });
 }
 async function files_delete(name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/files/" + name + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -445,7 +445,7 @@ async function files_delete(name) {
   });
 }
 async function media_upload(file) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/upload/v1beta/files" + "?" + queryParams.toString());
   const headers = new Headers();
@@ -480,7 +480,7 @@ async function media_metadata() {
   
 }
 async function models_batchEmbedContents(model, requests) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + model +":batchEmbedContents" + "?" + queryParams.toString());
   const data = {
@@ -495,7 +495,7 @@ async function models_batchEmbedContents(model, requests) {
 // models_countMessageTokens (deprecated)
 // models_countTextTokens (deprecated)
 async function models_countTokens(model, contents, tools, toolConfig, safetySettings, systemInstruction, generationConfig, cachedContent) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + model +":countTokens" + "?" + queryParams.toString());
   const data = {
@@ -514,7 +514,7 @@ async function models_countTokens(model, contents, tools, toolConfig, safetySett
   });
 }
 async function models_embedContent(model, content, taskType, title, outputDimensionality) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + model +":embedContents" + "?" + queryParams.toString());
   const data = {
@@ -530,7 +530,7 @@ async function models_embedContent(model, content, taskType, title, outputDimens
 }
 // models_embedText (deprecated)
 async function models_generateAnswer() {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + model +":generateAnswer" + "?" + queryParams.toString());
   const data = {
@@ -546,7 +546,7 @@ async function models_generateAnswer() {
   });
 }
 async function models_generateContent(model, contents, tools, toolConfig, safetySettings, systemInstruction, generationConfig, cachedContent) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + model +":generateContent" + "?" + queryParams.toString());
   const data = {
@@ -566,7 +566,7 @@ async function models_generateContent(model, contents, tools, toolConfig, safety
 // models_generateMessage (deprecated)
 // models_generateText (deprecated)
 async function models_get(name) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + name + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -574,7 +574,7 @@ async function models_get(name) {
   });
 }
 async function models_list(pageSize, pageToken) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("pageSize", pageSize);
   queryParams.set("pageToken", pageToken);
@@ -584,7 +584,7 @@ async function models_list(pageSize, pageToken) {
   });
 }
 async function models_streamGenerateContent(model, contents, tools, toolConfig, safetySettings, systemInstruction, generationConfig, cachedContent) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/models/" + model +":streamGenerateContent" + "?" + queryParams.toString());
   const data = {
@@ -603,7 +603,7 @@ async function models_streamGenerateContent(model, contents, tools, toolConfig, 
 }
 
 async function tunedModels_create(tunedModelId, displayName, description, tuningTask, readerProjectNumbers, source_model, temperature, topP, topK) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("tunedModelId", tunedModelId);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + "?" + queryParams.toString());
@@ -623,7 +623,7 @@ async function tunedModels_create(tunedModelId, displayName, description, tuning
   });
 }
 async function tunedModels_delete(tunedModelId) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   queryParams.set("tunedModelId", tunedModelId);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + "?" + queryParams.toString());
@@ -632,7 +632,7 @@ async function tunedModels_delete(tunedModelId) {
   });
 }
 async function tunedModels_generateContent(tunedModelId, contents, tools, toolConfig, safetySettings, systemInstruction, generationConfig, cachedContent) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + ":generateContent" + "?" + queryParams.toString());
   const data = {
@@ -651,7 +651,7 @@ async function tunedModels_generateContent(tunedModelId, contents, tools, toolCo
 }
 // tunedModels_generateText (deprecated)
 async function tunedModels_get(tunedModelId) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -659,7 +659,7 @@ async function tunedModels_get(tunedModelId) {
   });
 }
 async function tunedModels_list() {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -667,7 +667,7 @@ async function tunedModels_list() {
   });
 }
 async function tunedModels_patch(tunedModelId, displayName, description, tuningTask, readerProjectNumbers, source_model, temperature, topP, topK) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   for (const field of fields) {
     queryParams.add("updateMask", field);
@@ -690,7 +690,7 @@ async function tunedModels_patch(tunedModelId, displayName, description, tuningT
   });
 }
 async function tunedModels_streamGenerateContent(tunedModelId, contents, tools, toolConfig, safetySettings, systemInstruction, generationConfig, cachedContent) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + ":streamGenerateContent" + "?" + queryParams.toString());
   const data = {
@@ -708,7 +708,7 @@ async function tunedModels_streamGenerateContent(tunedModelId, contents, tools, 
   });
 }
 async function tunedModels_transferOwnership(tunedModelId, emailAddress) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + ":streamGenerateContent" + "?" + queryParams.toString());
   const data = {
@@ -720,7 +720,7 @@ async function tunedModels_transferOwnership(tunedModelId, emailAddress) {
   });
 }
 async function tunedModels_permissions_create(parent, granteeType, emailAddress, role) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + parent + "/permissions" + "?" + queryParams.toString());
   const data = {
@@ -735,7 +735,7 @@ async function tunedModels_permissions_create(parent, granteeType, emailAddress,
   });
 }
 async function tunedModels_permissions_delete(tunedModelId, permission) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + "/permissions/" + permission + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -743,7 +743,7 @@ async function tunedModels_permissions_delete(tunedModelId, permission) {
   });
 }
 async function tunedModels_permissions_get(tunedModelId, permission) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + "/permissions/" + permission + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -751,7 +751,7 @@ async function tunedModels_permissions_get(tunedModelId, permission) {
   });
 }
 async function tunedModels_permissions_list(tunedModelId) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/tunedModels/" + tunedModelId + "/permissions/" + "?" + queryParams.toString());
   return await fetch(endpoint, {
@@ -759,7 +759,7 @@ async function tunedModels_permissions_list(tunedModelId) {
   });
 }
 async function tunedModels_permissions_patch(tunedModelId, permission) {
-  const queryParams = new SearchParams();
+  const queryParams = new URLSearchParams();
   queryParams.set("key", apiKey);
   for (const field of fields) {
     queryParams.add("updateMask", field);
