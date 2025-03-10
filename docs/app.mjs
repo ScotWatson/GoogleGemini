@@ -28,7 +28,7 @@ models_generateContent("gemini-2.0-flash", contents).then(async (response) => {
 });
 
 async function testFile(file) {
-  const response = media_upload(file);
+  const response = await media_upload(file);
   const responseJSON = await response.json();
   const file_uri = responseJSON.file.uri;
   const contents = [
@@ -468,8 +468,8 @@ async function media_upload(file) {
   });
   const upload_url = response.headers.get("x-goog-upload-url");
   const headersFile = new Headers();
-  headersFile.add("X-Goog-Upload-Offset", "0");
-  headersFile.add("X-Goog-Upload-Command", "upload, finalize");
+  headersFile.set("X-Goog-Upload-Offset", "0");
+  headersFile.set("X-Goog-Upload-Command", "upload, finalize");
   return await fetch(upload_url, {
     method: "POST",
     headers: headersFile,
