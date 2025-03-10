@@ -307,11 +307,11 @@ async function corpera_documents_chunks_patch(corpera, document, chunk, fields, 
     queryParams.add("updateMask", field);
   }
   const endpoint = new URL("https://generativelanguage.googleapis.com/v1beta/corpera/" + corpera + "/documents/" + document + "/chunks" + chunk + "?" + queryParams.toString());
-  const data = {
+  const struct = {
     data,
     customMetadata,
   };
-  const blob = new Blob([ JSON.stringify(data) ], { type: "application/json" });
+  const blob = new Blob([ JSON.stringify(struct) ], { type: "application/json" });
   return await fetch(endpoint, {
     method: "PATCH",
     body: blob,
