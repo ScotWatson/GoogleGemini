@@ -561,6 +561,7 @@ async function models_generateContent(model, contents, tools, toolConfig, safety
   const blob = new Blob([ JSON.stringify(data) ], { type: "application/json" });
   return await fetch(endpoint, {
     method: "POST",
+    body: blob,
   });
 }
 // models_generateMessage (deprecated)
