@@ -54,13 +54,13 @@ const btnTestFile = document.createElement("button");
 btnTestFile.innerHTML = "Test File";
 document.body.appendChild(btnTestFile);
 btnTestFile.addEventListener("click", (evt) => {
-  testFile(file);
   const input = document.createElement("input");
   input.type = "file";
   document.body.appendChild(input);
   input.click();
   input.addEventListener("change", () => {
     const file = input.files[0];
+    testFile(file);
   });
 });
 
